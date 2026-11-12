@@ -1,0 +1,15 @@
+﻿<Window x:Class="TelekiSzimulator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xml:lang="hu-HU"
+        Title="Teleki szimulátor"
+        Height="420"
+        Width="480"
+        MinHeight="320"
+        MinWidth="420"
+        WindowStartupLocation="CenterScreen"
+        Background="#EEF1F4"
+        FontFamily="Segoe UI"
+        FontSize="15">
+    <ContentControl x:Name="Host"/>
+</Window>

@@ -1,0 +1,175 @@
+{
+  "title": "Egy nap az iskolában",
+  "start": "1",
+  "scenes": [
+    {
+      "id": "1",
+      "title": "Ébresztő",
+      "level": 0,
+      "ending": false,
+      "text": "Csörög az ébresztő",
+      "media": "1.mp4",
+      "choices": [
+        {
+          "label": "Nem ébredek fel",
+          "next": "2"
+        },
+        {
+          "label": "Szundi",
+          "next": "3"
+        },
+        {
+          "label": "Felkelek",
+          "next": "4"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Felkelek",
+      "level": 1,
+      "ending": false,
+      "text": "Felkelek nagy nehezen",
+      "media": "4.jpg",
+      "choices": [
+        {
+          "label": "Elindulok az iskolába",
+          "next": "6"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Szundi",
+      "level": 1,
+      "ending": false,
+      "text": "Szundit nyomok",
+      "media": "3.mp4",
+      "choices": [
+        {
+          "label": "Elkésem",
+          "next": "5"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Tovább alszok",
+      "level": 1,
+      "ending": false,
+      "text": "Nem ébredek fel",
+      "media": "2.jpg",
+      "choices": [
+        {
+          "label": "Elkésem",
+          "next": "5"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Iskolába menet",
+      "level": 2,
+      "ending": false,
+      "text": "Megyek a suliba",
+      "media": "",
+      "choices": [
+        {
+          "label": "Nincs felszerelés",
+          "next": "10"
+        },
+        {
+          "label": "Félig alszok",
+          "next": "8"
+        },
+        {
+          "label": "Felelés",
+          "next": "9"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Késés",
+      "level": 2,
+      "ending": false,
+      "text": "Még alszok az órán",
+      "media": "",
+      "choices": [
+        {
+          "label": "Felelés",
+          "next": "7"
+        },
+        {
+          "label": "Félig Alszok",
+          "next": "8"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "title": "Felelés",
+      "level": 3,
+      "ending": false,
+      "text": "Szerintem nem lett vészes!",
+      "media": "",
+      "choices": [
+        {
+          "label": "Nem rossz eredménnyel",
+          "next": "11"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "title": "Felelés késve",
+      "level": 3,
+      "ending": false,
+      "text": "elkéstem és még felelek is.",
+      "media": "",
+      "choices": [
+        {
+          "label": "Nem jó eredménnyel",
+          "next": "11"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "title": "Félig alszok",
+      "level": 3,
+      "ending": false,
+      "text": "Nem ébredtem még fel",
+      "media": "",
+      "choices": [
+        {
+          "label": "Váratlan infó",
+          "next": "11"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "title": "Nincs felszerelés",
+      "level": 3,
+      "ending": false,
+      "text": "Persze hogy otthon maradt.",
+      "media": "",
+      "choices": [
+        {
+          "label": "Váratlan infó",
+          "next": "11"
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "title": "vége",
+      "level": 0,
+      "ending": true,
+      "text": "ez az utolsó",
+      "media": "",
+      "choices": []
+    }
+  ]
+}
