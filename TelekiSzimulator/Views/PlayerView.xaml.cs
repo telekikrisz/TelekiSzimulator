@@ -29,6 +29,10 @@ public partial class PlayerView : UserControl
 
     public event EventHandler? CloseRequested;
 
+    public event EventHandler? StoryStarted;
+
+    public event EventHandler? ReturnedToPicker;
+
     public void Stop() => ReleasePlayer();
 
     private void OnLoaded(object sender, RoutedEventArgs e)
@@ -74,6 +78,7 @@ public partial class PlayerView : UserControl
             Stage.Visibility = Visibility.Visible;
             StoryHeading.Text = string.IsNullOrWhiteSpace(story.Title) ? item.Title : story.Title;
             ShowScene(_scenes[_startId]);
+            StoryStarted?.Invoke(this, EventArgs.Empty);
         }
         catch (Exception ex)
         {
@@ -124,7 +129,8 @@ public partial class PlayerView : UserControl
             MinHeight = 44,
             Padding = new Thickness(16, 8, 16, 8),
             Margin = new Thickness(6, 0, 6, 0),
-            FontSize = 16
+            FontSize = 16,
+            Style = (Style)Application.Current.FindResource("PrimaryButton")
         };
     }
 
@@ -138,6 +144,7 @@ public partial class PlayerView : UserControl
         Stage.Visibility = Visibility.Collapsed;
         Picker.Visibility = Visibility.Visible;
         ResetPicker();
+        ReturnedToPicker?.Invoke(this, EventArgs.Empty);
     }
 
     private void Follow(string nextId)

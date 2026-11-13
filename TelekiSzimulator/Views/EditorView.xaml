@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              xml:lang="hu-HU"
-             Background="#EEF1F4"
+             Background="Transparent"
              FontFamily="Segoe UI"
              FontSize="15">
     <Grid Margin="16">
@@ -15,7 +15,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Border Grid.Row="0" Background="White" CornerRadius="8" Padding="16,12" Margin="0,0,0,12">
+        <Border Grid.Row="0" Background="{StaticResource CardBrush}" CornerRadius="16" Padding="16,12" Margin="0,0,0,12">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
@@ -61,7 +61,7 @@
                 <ColumnDefinition Width="400"/>
             </Grid.ColumnDefinitions>
 
-            <Border Grid.Column="0" Background="White" CornerRadius="8" Padding="12" Margin="0,0,12,0">
+            <Border Grid.Column="0" Background="{StaticResource CardBrush}" CornerRadius="16" Padding="12" Margin="0,0,12,0">
                 <DockPanel>
                     <StackPanel DockPanel.Dock="Bottom" Margin="0,12,0,0">
                         <Button x:Name="NewSceneButton"
@@ -76,7 +76,7 @@
                                 Click="DeleteScene_Click"/>
                         <TextBlock Text="A csillag az egyetlen kezdőjelenet, a négyzet egy záró jelenet. A többi szint szerint rendezett."
                                    FontSize="12"
-                                   Foreground="#6B7280"
+                                   Foreground="{StaticResource MutedBrush}"
                                    TextWrapping="Wrap"
                                    Margin="2,10,0,0"/>
                     </StackPanel>
@@ -98,15 +98,14 @@
                                     </DataTemplate>
                                 </ListBox.ItemTemplate>
                                 <ListBox.ItemContainerStyle>
-                                    <Style TargetType="ListBoxItem">
+                                    <Style TargetType="ListBoxItem" BasedOn="{StaticResource {x:Type ListBoxItem}}">
                                         <Setter Property="Padding" Value="8,7"/>
-                                        <Setter Property="Margin" Value="0,1"/>
                                     </Style>
                                 </ListBox.ItemContainerStyle>
                             </ListBox>
                             <TextBlock x:Name="EmptyListHint"
                                        Text="Még nincs mentett jelenet."
-                                       Foreground="#9CA3AF"
+                                       Foreground="{StaticResource MutedBrush}"
                                        HorizontalAlignment="Center"
                                        VerticalAlignment="Center"
                                        IsHitTestVisible="False"/>
@@ -115,13 +114,13 @@
                 </DockPanel>
             </Border>
 
-            <Border Grid.Column="1" Background="White" CornerRadius="8" Padding="16" Margin="0,0,12,0">
+            <Border Grid.Column="1" Background="{StaticResource CardBrush}" CornerRadius="16" Padding="16" Margin="0,0,12,0">
                 <Grid>
                     <TextBlock x:Name="FormPlaceholder"
                                Text="A bal oldali lista a mentett jeleneteké. Az Új jelenet gomb megnyitja ezt az adatlapot. Mentés után a jelenet megjelenik a listában, kattintásra pedig újra szerkeszthető."
                                TextWrapping="Wrap"
                                TextAlignment="Center"
-                               Foreground="#6B7280"
+                               Foreground="{StaticResource MutedBrush}"
                                Margin="24"
                                VerticalAlignment="Center"
                                HorizontalAlignment="Center"/>
@@ -183,7 +182,7 @@
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
-                                <Border Background="#F3F4F6" CornerRadius="4" Padding="8,6" MinHeight="34">
+                                <Border Background="{StaticResource FieldBrush}" CornerRadius="8" Padding="8,6" MinHeight="34">
                                     <TextBlock x:Name="MediaNameText"
                                                Text="Nincs média"
                                                VerticalAlignment="Center"
@@ -196,13 +195,13 @@
                                         Click="Browse_Click"/>
                             </Grid>
                             <TextBlock Text="png vagy jpg kép, gif animáció, mp4 videó vagy mp3 hang. A program a jelenet számával menti, például 1.gif."
-                                       Foreground="#6B7280"
+                                       Foreground="{StaticResource MutedBrush}"
                                        TextWrapping="Wrap"
                                        Margin="0,0,0,16"/>
 
                             <TextBlock Text="Választások" FontWeight="SemiBold"/>
                             <TextBlock Text="A felirat kerül a gombra. A cél egy már elmentett jelenet. Üres cél később is beállítható."
-                                       Foreground="#6B7280"
+                                       Foreground="{StaticResource MutedBrush}"
                                        TextWrapping="Wrap"
                                        Margin="0,2,0,8"/>
 
@@ -212,14 +211,14 @@
                                     <ColumnDefinition Width="210"/>
                                     <ColumnDefinition Width="84"/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Text="Felirat" Foreground="#6B7280"/>
-                                <TextBlock Grid.Column="1" Text="Céljelenet" Margin="8,0,0,0" Foreground="#6B7280"/>
+                                <TextBlock Text="Felirat" Foreground="{StaticResource MutedBrush}"/>
+                                <TextBlock Grid.Column="1" Text="Céljelenet" Margin="8,0,0,0" Foreground="{StaticResource MutedBrush}"/>
                             </Grid>
                             <StackPanel x:Name="ChoicesPanel"/>
                             <TextBlock x:Name="EndingHint"
                                        Text="Választás nélkül a lejátszóban nincs tovább gomb. A záró jelenetet a jelölőnégyzet jelöli."
                                        TextWrapping="Wrap"
-                                       Foreground="#6B7280"
+                                       Foreground="{StaticResource MutedBrush}"
                                        Margin="0,0,0,8"
                                        Visibility="Collapsed"/>
                             <Button Content="Új választás"
@@ -230,6 +229,7 @@
 
                             <StackPanel Orientation="Horizontal" Margin="0,18,0,0">
                                 <Button Content="Jelenet mentése"
+                                        Style="{StaticResource PrimaryButton}"
                                         Padding="16,8"
                                         FontWeight="SemiBold"
                                         Click="SaveScene_Click"/>
@@ -244,7 +244,7 @@
                 </Grid>
             </Border>
 
-            <Border Grid.Column="2" Background="White" CornerRadius="8" Padding="12">
+            <Border Grid.Column="2" Background="{StaticResource CardBrush}" CornerRadius="16" Padding="12">
                 <DockPanel>
                     <TextBlock DockPanel.Dock="Top"
                                Text="Média előnézet"
@@ -255,9 +255,9 @@
                                DockPanel.Dock="Bottom"
                                Text="Nincs kiválasztott média."
                                TextWrapping="Wrap"
-                               Foreground="#4B5563"
+                               Foreground="{StaticResource MutedBrush}"
                                Margin="4,8,4,2"/>
-                    <Border Background="#111827" CornerRadius="6">
+                    <Border Background="{StaticResource StageBrush}" CornerRadius="16">
                         <Grid>
                             <MediaElement x:Name="PreviewPlayer"
                                           LoadedBehavior="Manual"
@@ -272,7 +272,7 @@
                                    Visibility="Collapsed"/>
                             <TextBlock x:Name="PreviewPlaceholder"
                                        Text="Itt jelenik meg a kiválasztott média."
-                                       Foreground="#D1D5DB"
+                                       Foreground="#F3EBDD"
                                        TextWrapping="Wrap"
                                        TextAlignment="Center"
                                        HorizontalAlignment="Center"
@@ -287,7 +287,7 @@
         <TextBlock x:Name="StatusText"
                    Grid.Row="2"
                    Margin="4,10,4,0"
-                   Foreground="#4B5563"
+                   Foreground="{StaticResource MutedBrush}"
                    TextWrapping="Wrap"
                    Text="A történetek a projekt Stories mappájába kerülnek."/>
     </Grid>

@@ -60,10 +60,24 @@ public partial class MainWindow : Window
     {
         var player = new PlayerView();
         player.CloseRequested += (_, _) => ShowHome();
+        player.StoryStarted += (_, _) => UseWorkSize();
+        player.ReturnedToPicker += (_, _) => UsePickerSize();
         Host.Content = player;
         _atHome = false;
         Title = "Teleki szimulátor – játék";
-        UseWorkSize();
+        UsePickerSize();
+    }
+
+    private void UsePickerSize()
+    {
+        if (WindowState == WindowState.Maximized)
+            WindowState = WindowState.Normal;
+
+        MinWidth = 440;
+        MinHeight = 380;
+        Width = 500;
+        Height = 460;
+        CenterOnScreen();
     }
 
     private void UseHomeSize()

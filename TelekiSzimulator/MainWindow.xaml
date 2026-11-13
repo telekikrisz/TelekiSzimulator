@@ -8,7 +8,8 @@
         MinHeight="320"
         MinWidth="420"
         WindowStartupLocation="CenterScreen"
-        Background="#EEF1F4"
+        Background="{StaticResource AppBackground}"
+        Foreground="{StaticResource InkBrush}"
         FontFamily="Segoe UI"
         FontSize="15">
     <ContentControl x:Name="Host"/>
